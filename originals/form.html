@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>My Project</title>
+  </head>
+  <body>
+
+  <style>
+  
+    @import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
+
+   
+    
+    body{
+        background: #dfdfdf
+    }
+    
+    .container{
+        @include bm(100%, 100%, $bm-pd: 0 16px, $bm-dp: $fl);
+        @include flex-center($rnw)
+    }
+    
+    form{
+        @include bm(400px, $bm-dp: $fl);
+        @include flex-center($cw);
+            div, label, input, textarea{
+                @include bm(100%)
+            }
+    }
+    
+    .field:nth-of-type(2){
+        @include bm($bm-mg: 16px 0)
+    }
+    
+    label, input, textarea{
+        @include bm($bm-pd: 8px)
+    }
+    
+    label, [placeholder]{
+        @include tf(#555)
+    }
+    
+    label i{
+        @include bm($bm-mg: 0 10px 0 0)
+    }
+    
+    .field:focus-within label{
+        @include tf(#000, $tf-ls: 2px)
+    }
+    
+    input, textarea{
+        background: rgba(255,255,255,.5);
+        border: none;
+        @include other($ot-br: 4px, $ot-bs: $o-b);
+            &:focus{
+                background: rgba(255,255,255,1);
+                @include other($ot-bs: none)
+            }
+    }
+    
+    textarea{
+        resize: none;
+            &::-webkit-scrollbar{
+                @include bm(0)
+            }
+    }
+    
+    button{
+        background: #2f4ad0;
+        @include bm($bm-pd: 8px 16px, $bm-mg: 16px 0 50px 0);
+        @include tf(#fff);
+        border: none;
+        @include other($ot-br: 4px, $ot-cr: pointer, $ot-bs: $o-b);
+            &:hover{
+                @include tf($tf-ls: 2px);
+                @include other($ot-bs: none)
+            }
+    }
+    
+    .social-media{
+        @include bm($bm-dp: $fl);
+        @include fb($rw, $fb-jc: $sa);
+            :not(&){
+                @include tf($tf-fs: 14px)
+            }
+            span{
+                @include tf($tf-fs: 16px)
+            }
+            span .fas{
+                @include bm($bm-mg: 0 0 0 10px)
+            }
+            a{
+                @include tf(#000, $tf-fs: 20px)
+            }
+    }
+    
+    @media (max-width: 425px){
+        form{
+            @include bm(100%)
+        }
+    }
+</style>
+
+<div class="container">
+    <form action="/action_page.php">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <label for="phone">Phone:</label>
+      <input type="tel"id="phone" name="phone">
+      <br>
+      <input type="checkbox" id="cake1" name="cake1" value="Brownies">
+      <label for="cake1"> Brownies </label><br>
+      <input type="checkbox" id="cake2" name="cake2" value="Speciality cakes">
+      <label for="cake1"> Speciality cakes </label><br>
+      <input type="checkbox" id="cake3" name="cake3" value="Flavoured cakes">
+      <label for="cake3"> Flavoured cakes </label><br>
+      <input type="checkbox" id="cake4" name="cake4" value="Cheesecakes">
+      <label for="cake4"> Cheesecakes </label><br>
+      <input type="checkbox" id="cake5" name="cake5" value="Cupcakes">
+      <label for="cake5"> Cupcakes </label><br>
+      <input type="checkbox" id="cake6" name="cake6" value="Macarons">
+      <label for="cake6"> Macarons </label><br>
+      <label for="order">Date required:</label>
+      <input type="date" id="order" name="order">
+      
+      
+      <input type="submit" value="Submit">
+    </div>
+    
+  </form>
+<!--            
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+-->
